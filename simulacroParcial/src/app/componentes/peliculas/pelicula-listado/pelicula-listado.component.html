@@ -1,0 +1,11 @@
+<p>pelicula-listado works!</p>
+
+<li *ngFor="let pelicula of listaPeliculasRecibida">
+    ID: {{pelicula.id}}
+    Nombre: {{pelicula.nombre}}
+    Tipo: {{pelicula.tipo}}
+    Fecha: {{pelicula.fecha}}
+    Cantidad de Publico: {{pelicula.cantidadDePublico}}
+    Foto de la Pelicula: <img [src]="pelicula.fotoDeLaPelicula" width="50px" alt="">
+    <button class="btn btn-primary" (click)="obtenerPelicula(pelicula)">Dar Detalles</button>
+</li>
