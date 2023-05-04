@@ -1,0 +1,8 @@
+<div *ngFor="let country of countries | slice:5:15">
+    <button class="btn btn-light" (click)="obtenerPaises(country.translations.spa.common)">
+      <h3 style="display: inline;">
+        {{country.translations.spa.common}}  
+      </h3>
+      <img [src]="country.flags.svg" alt="{{country.translations.spa.common}} flag" width="25">
+    </button>
+</div>

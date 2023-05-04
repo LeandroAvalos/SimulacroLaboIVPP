@@ -1,1 +1,77 @@
-<p>actor-alta works!</p>
+<div class="container">
+    <div class="py-5 text-center">
+      <img class="d-block mx-auto mb-4" src="../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h2>Checkout form</h2>
+      <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+  
+    <div class="row">
+      <div class="col-md-4 order-md-2 mb-4">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+          <span class="text-muted">Seleccione Pais</span>
+          <span class="badge badge-secondary badge-pill">3</span>
+        </h4>
+        <div>
+          <app-tabla-paises (paises)="paisSeleccionado($event)"></app-tabla-paises>
+        </div>
+        
+  
+        <!-- <form class="card p-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Promo code">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-secondary">Redeem</button>
+            </div>
+          </div>
+        </form> -->
+      </div>
+      <div class="col-md-8 order-md-1">
+        <h4 class="mb-3">Alta actor</h4>
+  
+          <div class="row">
+            <div class="col-md-6 mb-3" >
+              <label for="nombre">Nombre</label>
+              <input type="text" class="form-control" id="nombre" [(ngModel)]="actor.nombre" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Nombre valido requerido
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="apellido">Apellido</label>
+              <input type="text" class="form-control" id="apellido" [(ngModel)]="actor.apellido" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Apellido valido requerido
+              </div>
+            </div>
+          </div>
+  
+  
+          <div class="mb-3">
+            <label for="edad">Edad</label>
+            <input type="text" class="form-control" [(ngModel)]="actor.edad" id="edad" placeholder="Ingrese edad" required>
+            <div class="invalid-feedback">
+              Ingrese edad valida
+            </div>
+          </div>
+  
+          <div class="mb-3">
+            <label for="foto">Foto <span class="text-muted"></span></label>
+            <input type="text" class="form-control" id="foto" [(ngModel)]="actor.foto" disabled placeholder="Ingrese foto">
+          </div>
+  
+          <div class="row">
+            <div class="col-md-5 mb-3">
+              <label for="pais">Pais</label>
+              <input type="text" [value]="paisSeleccion" id="pais" [(ngModel)]="actor.pais" class="form-control" readonly>
+              <div class="invalid-feedback">
+                Ingrese pais valido
+              </div>
+            </div>
+     
+          </div>
+         
+          <hr class="mb-4">
+          <button class="btn btn-primary btn-lg btn-block" (click)="guardarActor()">Dar de alta</button>
+ 
+      </div>
+    </div>
